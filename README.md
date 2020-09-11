@@ -16,7 +16,7 @@
 
 The following pages outlines the steps to integrating Remita Inline Payment SDK to your app.
 
-## 1.0         Note: This setup is done on XCode 10.3, Swift, on Mac OS X(64bit) Mojave
+## 1.0         Note: This setup is done on XCode 10.3, Swift 5.0.1, on Mac OS X(64bit) Mojave
 
 **Step 1:** Go to **Add Files to < Project name > . . . ** 
 
