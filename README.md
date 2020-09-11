@@ -71,56 +71,43 @@ You should invoke the RemitaInlinePaymentSDK.getInstance() at any point when mak
 
 
 **Sample Code:**
-```java
-public class MainActivity extends AppCompatActivity implements RemitaGatewayPaymentResponseListener {
+```swift
+import UIKit
+import RemitaPaymentGateway
 
-    Button button;
+class ViewController: UIViewController, RemitaPaymentGatewayDelegate {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.remita_activity_main);
+override func viewDidLoad() {
+super.viewDidLoad()
+// Do any additional setup after loading the view, typically from a nib.
+}
 
-        button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+override func didReceiveMemoryWarning() {
+super.didReceiveMemoryWarning()
+// Dispose of any resources that can be recreated.
+}
 
-                EditText et_amount = findViewById(R.id.et_amount);
-                String amount = et_amount.getText().toString();
+@IBAction func payButton(_ sender: UIButton) {
+let paymentGateway: RemitaPaymentGateway = RemitaPaymentGateway()
+paymentGateway.delegate = self
 
-                String url = RIPGateway.Endpoint.DEMO;
-                String api_key = "QzAwMDAxOTUwNjl8NDMyNTkxNjl8ZTg0MjI2MDg4MjU0NzA2NTY2MTYwNGU1NjNiMjUzYjk4ZDQwZjljZGFiMTVmYTljMDUwMGQ0MDg2MjIyYjEyNTA1ZTE2MTMxNmE3ZjM1OTZmYmJkOTE2MTRiY2NmZTY5NTM4MGQ2MDBlZGJlZmM2ODc2YTc2M2M4MjgyZmFjODc=";
-                String email = "diagboya@systemspecs.com.ng";
-                String currencyCode = "NGN";
-                String firstName = "Iyare";
-                String lastName = "Diagboya";
-                String customerId = "diagboya@systemspecs.com.ng";
-                String phoneNumber = "07031731478";
-                String transactionId = String.valueOf(new Date().getTime());
-                String narration = "Bugatti Chiron 2020";
+let url: String = Constants.DEMO.rawValue
 
-                RemitaInlinePaymentSDK remitaInlinePaymentSDK = RemitaInlinePaymentSDK.getInstance();
-                remitaInlinePaymentSDK.setRemitaGatewayPaymentResponseListener(MainActivity.this);
+let txnId: String = UUID().uuidString.replacingOccurrences(of: "-", with: "")
 
-                remitaInlinePaymentSDK.initiatePayment(MainActivity.this, url, api_key, email,
-                        amount, currencyCode, firstName, lastName, customerId, phoneNumber, transactionId, narration);
-            }
-        });
-    }
+paymentGateway.initiatePayment(on: self, url:url, key: "QzAwMDAxOTUwNjl8NDMyNTkxNjl8ZTg0MjI2MDg4MjU0NzA2NTY2MTYwNGU1NjNiMjUzYjk4ZDQwZjljZGFiMTVmYTljMDUwMGQ0MDg2MjIyYjEyNTA1ZTE2MTMxNmE3ZjM1OTZmYmJkOTE2MTRiY2NmZTY5NTM4MGQ2MDBlZGJlZmM2ODc2YTc2M2M4MjgyZmFjODc=", email: "lisa@spark.com", amount: "100", phoneNumber:"08037412366", firstname: "lisa", lastname: "Spark", customerId: "140700251", currencyCode: "NGN", transactionId: txnId, narration: "leather gucci bag")
+}
 
-    @Override
-    public void onPaymentCompleted(PaymentResponse paymentResponse) {
+func onPaymentCompleted(paymentResponse: PaymentResponse) {
+print("+++ RESPONSE: \(String(describing: paymentResponse))")
+}
 
-        Log.v("+++ Response: ", JsonUtil.toJson(paymentResponse));
-        Toast.makeText(this, JsonUtil.toJson(paymentResponse), Toast.LENGTH_LONG);
-    }
 }
  ```
 
 
 Where url can be:
 
-**RIPGateway.Endpoint.DEMO** (for testing) and **RIPGateway.Endpoint.PRODUCTION** (for live).
+**Constants.DEMO.rawValue** (for testing) and **Constants.PRODUCTION.rawValue** (for live).
 
 ![](images/inline_snapshot.JPG)
