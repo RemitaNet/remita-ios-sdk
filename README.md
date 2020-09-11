@@ -18,9 +18,9 @@ The following pages outlines the steps to integrating Remita Inline Payment SDK 
 
 ## 1.0         Note: This setup is done on XCode 10.3, Swift 5.0.1, on Mac OS X(64bit) Mojave
 
-**Step 1:** Go to **Add Files to < Project name > . . . ** 
+**Step 1:** Right click on your project root file, go to **Add Files to < Project name > . . . ** and click
 
-**Step 2:** Click on **Copy tructure**
+**Step 2:** Browse to the cloned SDK and select **RemitaPaymentGateway.xcodeproj**, check 'Copy items if needed' and 'Create groups' click on add.
 
 ![](images/project_structure.JPG)
  
