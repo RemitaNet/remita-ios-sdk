@@ -18,49 +18,20 @@ The following pages outlines the steps to integrating Remita Inline Payment SDK 
 
 ## 1.0         Note: This setup is done on XCode 10.3, Swift, on Mac OS X(64bit) Mojave
 
-**Step 1:** Go to **File** in Menu bar
+**Step 1:** Go to **Add Files to < Project name > . . . ** 
 
-**Step 2:** Click on **Project Structure**
+**Step 2:** Click on **Copy tructure**
 
 ![](images/project_structure.JPG)
  
 
-**Step 3:** Select **Modules** and click the &quot; **+**&quot; under Modules section to add the &quot;rip-sdk.aar&quot; to your project.
-Note: You can find the rip-sdk.aar at: https://github.com/RemitaNet/remita-android/tree/master/aar
+**Step 3:** Select **RemitaPaymentGateway.framework** drag and drop  under "Embedded Binaries" section to add the sdk  to your project.
 
  ![](images/modules.JPG)
 
 
+**Step 5:** Rebuild project
 
-**Step 4:** Select Import .JAR/.AAR Package
-
- ![](images/aar_location.JPG)
-
-
-
-**Step 5:** Locate rip-sdk.aar and click ok
- ![](images/import_module.JPG)
-
-
-**Step 6:** Select **Dependencies** and then select **app** then click on &quot; **+&quot;** under **Declared Dependencies**
-![](images/dependencies.JPG)
- 
-
-**Step 7:** Select **Module Dependency**
-![](images/module_dependency.JPG)
- 
-**Step 8:** Select the **rip-sdk** module and click &#39;OK&#39;.
-![](images/select_rip-sdk.JPG)
- 
-**Step 9:** Click on **Apply/Ok.**
-![](images/select_rip-sdk_2.JPG)
-
-**Step 10:** Rebuild project, you should see **implementation project(path: &#39;:rip-sdk&#39;)** in your dependencies block.
-![](images/rebuild.JPG)
-
-**Step 11:** Just in case
-Add  **api 'com.google.code.gson:gson:2.8.2'** to your applications dependencies (If you haven't).
- 
 ** **
 
 
