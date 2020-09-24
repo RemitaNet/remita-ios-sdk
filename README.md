@@ -23,18 +23,11 @@ The following pages outlines the steps to integrating Remita Inline Payment SDK 
 
 **Step 2:** Browse to the cloned SDK and select **RemitaPaymentGateway.xcodeproj**, check 'Copy items if needed' and 'Create groups' click on add.
 
-![](images/project_structure.JPG)
- 
-
 **Step 3:** Select **RemitaPaymentGateway.framework** drag and drop  under "Embedded Binaries" section to add the sdk  to your project.
-
- ![](images/modules.JPG)
-
 
 **Step 4:** Rebuild project
 
 ** **
-
 
 
 # 2.0         TRY IT NOW
