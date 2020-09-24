@@ -39,7 +39,7 @@ The following pages outlines the steps to integrating Remita Inline Payment SDK 
 
 # 2.0         TRY IT NOW
 
-You should invoke the RemitaInlinePaymentSDK.getInstance() at any point when making payment:
+You should invoke paymentGateway: RemitaPaymentGateway = RemitaPaymentGateway() then paymentGateway.initiatePayment() with valid parameters at any point when making payment:
 
 
 **Sample Code:**
