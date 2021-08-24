@@ -2,6 +2,7 @@
 
 # Remita Inline Payment SDK for iOS
 
+![](images/inline_snapshot.png)
 
 ## Table of Contents
 
@@ -85,5 +86,3 @@ Where url can be:
               CCV: 000, 
               OTP: 123456
 ```
-
-![](images/inline_snapshot.png)
