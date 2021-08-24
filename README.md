@@ -75,4 +75,15 @@ Where url can be:
 
 **Constants.DEMO.rawValue** (for testing) and **Constants.PRODUCTION.rawValue** (for live).
 
-![](images/inline_snapshot.JPG)
+
+# 3.0         TEST CARDS
+
+
+```json
+              CARD: 5178 6810 0000 0002,  
+              Expire Date : 05/30,  
+              CCV: 000, 
+              OTP: 123456
+```
+
+![](images/inline_snapshot.png)
